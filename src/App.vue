@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <Contador/>
+    <hr />
+    <ContadorEnDiez />
     </div>
 </template>
  <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import Contador from './components/Contador.vue';
+import ContadorEnDiez from './components/CounterByTen.vue';
  @Component({
   components: {
     Contador,
+    ContadorEnDiez
   },
 })
 export default class App extends Vue {}

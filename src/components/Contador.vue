@@ -1,4 +1,27 @@
-<script lang="ts">
+<template>
+  <div>
+    <fieldset>
+      <legend>{{ this.formattedNumber }}</legend>
+      <button @click="increase">Incremebnta en uno</button>
+      <button @click="decrease">Decrementa en uno</button>
+    </fieldset>
+</div>
+</template>
+ <script lang="ts">
+import Component, { mixins } from 'vue-class-component';
+import DefaultNumber from '../mixins/defaultNumber';
+ @Component
+export default class Contador extends mixins(DefaultNumber) {
+  increase() {
+    this.valueNumber += 1;
+  }
+ decrease() {
+    this.valueNumber -= 1;
+  }
+}
+</script>
+
+<!--<script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
  @Component
 export default class Contador extends Vue {
@@ -22,4 +45,4 @@ increase() {
         <button @click="decrease">Decrease</button>
     </fieldset>
   </div>
-</template>
+</template>-->
